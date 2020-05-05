@@ -1,0 +1,14 @@
+CREATE TABLE `web_authn` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `user_table_id` int(11) NOT NULL,
+ `type` varchar(255) NOT NULL,
+ `fmt` varchar(255) NOT NULL,
+ `counter` int(11) NOT NULL,
+ `aagu_id` varchar(255) NOT NULL,
+ `credential_id` varchar(255) NOT NULL,
+ `credential_public_key` text NOT NULL,
+ `attestation_object` text NOT NULL,
+ `created_at` timestamp NULL,
+ `updated_at` timestamp NULL,
+ PRIMARY KEY (`id`)
+)

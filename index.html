@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP WebAuthn Sample</title>
+    <!--
+    This software contains the following modules.
+
+    [yamori4webAuthn]
+    https://github.com/yamori4/yamori4webAuthn
+    Copyright (c) 2020  Yamori4. All rights reserved.
+    Released under the MIT License
+    see https://opensource.org/licenses/mit-license.php
+
+    [CBOR encoder for PHP]
+    https://github.com/2tvenom/CBOREncode
+    Copyright (c) 1999 - 2012 The PHP Group. All rights reserved.
+    Released under the PHP License, version 3.01
+    see https://www.php.net/license/index.php
+    This product includes PHP, freely available from https://www.php.net/
+
+    [WebAuthnDemo]
+    https://github.com/google/webauthndemo/blob/master/src/main/webapp/js/webauthn.js
+    Copyright (c) 2017 Google Inc. All Rights Reserved.
+    Released under the Apache License, Version 2.0
+    see http://www.apache.org/licenses/*
+    -->
+</head>
+
+<body>
+    <h2>WebAuthn Sample</h2>
+
+    <input type="text" id="loginId" name="loginId" placeholder="example login id" value=""></input>
+    <br />
+
+    <input id="regsterWebAuthnBtn" type="button" name="regsterWebAuthnBtn" value="Register" title="regsterWebAuthnBtn"
+        onclick="checkWebAuthnAvailable();makeCredential(document.getElementById('loginId').value);" />
+
+    <input id="assertionWebAuthnBtn" type="button" name="assertionWebAuthnBtn" value="Assertion"
+        title="assertionWebAuthnBtn"
+        onclick="checkWebAuthnAvailable();getAssertion(document.getElementById('loginId').value);" />
+
+    <script type="text/javascript" src="oss/webAuthn.js"></script>
+    <script type="text/javascript">
+        function checkWebAuthnAvailable() {
+            if (window.PublicKeyCredential === undefined
+                || typeof window.PublicKeyCredential !== "function"
+                || !navigator.credentials
+                || !navigator.credentials.create) {
+                alert('This browser does not support webAuthn.');
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

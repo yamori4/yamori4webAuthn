@@ -1,0 +1,105 @@
+19:31:46 [ 1 ] AttestationRequest
+{
+    "status": "ok",
+    "errorMessage": "",
+    "challenge": "YpfYfUjds5kLetJakItca6DwaHGCJxjbEXanBxI14Sc",
+    "rp": {
+        "name": "localhost",
+        "id": "localhost"
+    },
+    "user": {
+        "name": "erawerrfa",
+        "displayName": "erawerrfa",
+        "id": "ZXJhd2VycmZh"
+    },
+    "pubKeyCredParams": [
+        {
+            "type": "public-key",
+            "alg": -7
+        },
+        {
+            "type": "public-key",
+            "alg": -8
+        },
+        {
+            "type": "public-key",
+            "alg": -35
+        },
+        {
+            "type": "public-key",
+            "alg": -36
+        },
+        {
+            "type": "public-key",
+            "alg": -38
+        },
+        {
+            "type": "public-key",
+            "alg": -37
+        },
+        {
+            "type": "public-key",
+            "alg": -39
+        },
+        {
+            "type": "public-key",
+            "alg": -257
+        },
+        {
+            "type": "public-key",
+            "alg": -258
+        },
+        {
+            "type": "public-key",
+            "alg": -259
+        }
+    ],
+    "authenticatorSelection": {
+        "requireResidentKey": false,
+        "userVerification": "preferred"
+    },
+    "excludeCredentials": [],
+    "attestation": "direct",
+    "timeout": 60000,
+    "extensions": []
+}
+19:31:49 [ 2 ] AttestationResponse
+{
+    "id": "ACfdHR9vpiORXeLR7-I_ijwZ1TTnDsa0Dy2yUjSnUSvsBbRpDkhzA5ECmqamo8rRGNarlw7cyMhnmv3a8qkGt6RCEepXVSmtwYuEWSAHbQw",
+    "type": "public-key",
+    "rawId": "ACfdHR9vpiORXeLR7-I_ijwZ1TTnDsa0Dy2yUjSnUSvsBbRpDkhzA5ECmqamo8rRGNarlw7cyMhnmv3a8qkGt6RCEepXVSmtwYuEWSAHbQw",
+    "response": {
+        "clientDataJSON": "eyJjaGFsbGVuZ2UiOiJZcGZZZlVqZHM1a0xldEpha0l0Y2E2RHdhSEdDSnhqYkVYYW5CeEkxNFNjIiwib3JpZ2luIjoiaHR0cHM6Ly9sb2NhbGhvc3QiLCJ0eXBlIjoid2ViYXV0aG4uY3JlYXRlIn0",
+        "attestationObject": "o2NmbXRoZmlkby11MmZnYXR0U3RtdKJjc2lnWEcwRQIgK38D_RMJRLQw0S4sapU3LMD3afRy7eUJcm6rkeI97iACIQC42oxGbm6TRyfuFhvt0aK_1bLm95C2A5Kwh5OnMzA5LGN4NWOBWQFrMIIBZzCCAQ2gAwIBAgIJANeVSb0aZxc1MAoGCCqGSM49BAMCMBcxFTATBgNVBAMMDEZUIEZJRE8gMDIwMDAgFw0xNjA1MDEwMDAwMDBaGA8yMDUwMDUwMTAwMDAwMFowITEfMB0GA1UEAwwWRlQgRklETyBQMTA0MzAwMTMzQTFGNjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKpi-3XjdbDo1RstXSWuIuGEbsW5n4yk0HD6wgrbSwFthc-FDIRAImP-2CHOYv4N5TsejEAX7nnIolPgRX0FOCejNjA0MB0GA1UdDgQWBBTV203Uj-Rq_Yr48ffPve5hZAu7zDATBgsrBgEEAYLlHAIBAQQEAwIEMDAKBggqhkjOPQQDAgNIADBFAiEA10Yew86XoO96DQBjLJheD1yXP7-ikusBcxsIog_t-SYCIF6sohUNNZoruCjpqbZif2KDImLCzq1_r6vSZG7cEshvaGF1dGhEYXRhWNRJlg3liA6MaHQ0Fw9kdmBbj-SuuaKGMseZXPO6gx2XY0EAAAAAAAAAAAAAAAAAAAAAAAAAAABQACfdHR9vpiORXeLR7-I_ijwZ1TTnDsa0Dy2yUjSnUSvsBbRpDkhzA5ECmqamo8rRGNarlw7cyMhnmv3a8qkGt6RCEepXVSmtwYuEWSAHbQylAQIDJiABIVggXT8brenbeRsM6l0vGjD2Xs30l8oWiwsuec5Jql80J6giWCCkvIkq2kU2KKLVhW0uf2NJw5oX2ngBBybbsScMJmTzig"
+    }
+}
+19:31:49 --- U2F attStmt verify ok! ---
+19:31:51 [ 3 ] AssertionRequest
+{
+    "status": "ok",
+    "errorMessage": "",
+    "challenge": "d_m12w-XvOCuOKMbtILWv6KHv5tqE9JgENEqk2byoL4",
+    "rpId": "localhost",
+    "allowCredentials": [
+        {
+            "type": "public-key",
+            "id": "ACfdHR9vpiORXeLR7-I_ijwZ1TTnDsa0Dy2yUjSnUSvsBbRpDkhzA5ECmqamo8rRGNarlw7cyMhnmv3a8qkGt6RCEepXVSmtwYuEWSAHbQw"
+        }
+    ],
+    "userVerification": "preferred",
+    "timeout": 60000,
+    "extensions": []
+}
+19:31:53 [ 4 ] AssertionResponse
+{
+    "id": "ACfdHR9vpiORXeLR7-I_ijwZ1TTnDsa0Dy2yUjSnUSvsBbRpDkhzA5ECmqamo8rRGNarlw7cyMhnmv3a8qkGt6RCEepXVSmtwYuEWSAHbQw",
+    "type": "public-key",
+    "rawId": "ACfdHR9vpiORXeLR7-I_ijwZ1TTnDsa0Dy2yUjSnUSvsBbRpDkhzA5ECmqamo8rRGNarlw7cyMhnmv3a8qkGt6RCEepXVSmtwYuEWSAHbQw",
+    "response": {
+        "clientDataJSON": "eyJjaGFsbGVuZ2UiOiJkX20xMnctWHZPQ3VPS01idElMV3Y2S0h2NXRxRTlKZ0VORXFrMmJ5b0w0Iiwib3JpZ2luIjoiaHR0cHM6Ly9sb2NhbGhvc3QiLCJ0eXBlIjoid2ViYXV0aG4uZ2V0In0",
+        "authenticatorData": "SZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2MBAAAE-g",
+        "signature": "MEQCIEprALgAZIT6cQUn_9RZ1L9lz0q-Wq97PgO-d9MoLhklAiAN3KfBpDeTX9ay6OJ2HcpG-YjRvuqVUWMZQQYjGOTBlg",
+        "userHandle": ""
+    }
+}
+19:31:53 --- Verify OK! ---
