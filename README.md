@@ -34,7 +34,7 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
 <img src="./_readMe/registerScreen.jpg" height="260px"/> <img src="./_readMe/authnScreen.jpg" height="260"/>
 
- <img src="./_readMe/authnSuccessScreen.jpg" height="230px" border="1"/>
+ <img src="./_readMe/authnSuccessScreen.jpg" height="230px"/>
 
 
 
@@ -48,7 +48,7 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 	
 	* MySQL動作環境
 	
-	* 一般的なWEBブラウザ（Chrome, FireFox, Edge,など）
+	* 一般的なWEBブラウザ（Chrome, Firefox, Edge,など、IEはWebAuthn非対応）
 	
 	* FIDOの認証器、または、Windows Helloなど
 	
@@ -66,53 +66,64 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
   <small>※XAMPPのインストールが完了しており、「C:\xampp」にインストールされている前提です。</small>
 
-  1. [GitHubのページ](https://github.com/yamori4/yamori4webAuthn)から当アプリケーションのソースコードをダウンロードします。ここではzipファイルのダウンロードをしてみましょう。GitHubページの「Clone or download」から「Download ZIP」をクリックします。
+1. [GitHubのページ](https://github.com/yamori4/yamori4webAuthn)から当アプリケーションのソースコードをダウンロードします。ここではzipファイルのダウンロードをしてみましょう。GitHubページの「Clone or download」から「Download ZIP」をクリックします。 ![alt](./_readMe/downloadZip.jpg)
 
-   ![alt](./_readMe/downloadZip.jpg)
+     
 
-  2. ダウンロードしたzipファイルを解凍します。
+2. ダウンロードしたzipファイルを解凍します。
 
-  3. 解凍したファイルは名前が「yamori4webAuthn-master」となっているので「yamori4webAuthn」に変更しておきましょう。
+     
 
-  4. 「C:\xampp\htdocs」配下に解凍したファイルを配置します。以下のようなディレクトリ構成になっていればOKです。
+3. 解凍したファイルは名前が「yamori4webAuthn-master」となっているので「yamori4webAuthn」に変更しておきましょう。
 
-   ```
-   C:
-   └xampp
-     └httocs
-       └yamori4webAuthn
-         ├─assertion
-         ├─attestation
-         ├─config
-         ├─db
-         ├─log
-         ├─oss
-         ├─sql(create_table)
-         ├─src
-         ├─util
-         ├─deleteDb.php
-         ├─index.html
-         └─loginSuccess.php
-   ```
+     
+  
+4. 「C:\xampp\htdocs」配下に解凍したファイルを配置します。以下のようなディレクトリ構成になっていればOKです。
 
-  5. 構築自体は以上で完了なのですが、実際にウェブサービスとして稼働させて軽く動作確認をしてみましょう。「C:\xampp\xampp-control.exe」という実行ファイルをクリックしてXAMPPのControl Panelを起動します。
+ ```
+ C:
+ └xampp
+   └httocs
+     └yamori4webAuthn
+       ├─assertion
+       ├─attestation
+       ├─config
+       ├─db
+       ├─log
+       ├─oss
+       ├─sql(create_table)
+       ├─src
+       ├─util
+       ├─deleteDb.php
+       ├─index.html
+       └─loginSuccess.php
+ ```
 
-  6. Apacheを起動します。Apacheの「Start」ボタンをクリックしてください。
-
-   <img src="./_readMe/controlPanel.jpg" >
+5. 構築自体は以上で完了なのですが、実際にウェブサービスとして稼働させて軽く動作確認をしてみましょう。「C:\xampp\xampp-control.exe」という実行ファイルをクリックしてXAMPPのControl Panelを起動します。
 
    
 
-  7. 起動できました。
+6. Apacheを起動します。Apacheの「Start」ボタンをクリックしてください。
 
-   <img src="./_readMe/wakeupApache.jpg" >
+<img src="./_readMe/controlPanel.jpg" />
 
-  8. 任意のウェブブラウザを起動してください、ここではChromeを使用しています。アドレスバーに「 https://localhost/yamori4webAuthn/index.html 」と入力してみてください。以下の画面が表示されます。XAMPPできちんとした設定をすればエラーは出なくなりますが、今回は接続先が自分のPC(localhost)であることをしっかりと確認したうえで接続します。Chromeの場合だと「詳細設定」ボタンをクリックしてから、「localhostにアクセスする」をクリックしてください。
-  （ちなみに、webAuthnは"http"だと使用できません、"https"である必要があります。）
 
-   <img src="./_readMe/privacyError.jpg" width="400"/> 
 
-  9. 以下の画面が表示されます。（※データベースの設定等をやっていないのでまだ動きません。）
+7. 起動できました。
+
+<img src="./_readMe/wakeupApache.jpg" />
+
+
+
+
+8. 任意のウェブブラウザを起動してください、ここではChromeを使用しています。アドレスバーに「 https://localhost/yamori4webAuthn/index.html 」と入力してみてください。以下の画面が表示されます。XAMPPできちんとした設定をすればエラーは出なくなりますが、今回は接続先が自分のPC(localhost)であることをしっかりと確認したうえで接続します。Chromeの場合だと「詳細設定」ボタンをクリックしてから、「localhostにアクセスする」をクリックしてください。
+（ちなみに、WebAuthnは"http"だと使用できません、"https"である必要があります。）
+
+<img src="./_readMe/privacyError.jpg" width="400"/> 
+
+
+
+9. 以下の画面が表示されます。（※データベースの設定等をやっていないのでまだ動きません。）
 
 <img src="./_readMe/indexScreen.jpg" />
 
@@ -123,30 +134,36 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
   ※XAMPPのインストールが済んでいる前提です。
 
-  1. XAMPPのコントロールパネルを起動します。
+1. XAMPPのコントロールパネルを起動します。
 
-  2. ApacheとMySqlの[Start]ボタンをクリックして、ApacheとMySqlを立ち上げます。
+   
 
-     ./_readMe/xamppStart.jpg"  border="1" />
+2. ApacheとMySqlの[Start]ボタンをクリックして、ApacheとMySqlを立ち上げます。
 
-     <img src="./_readMe/xamppStarted.jpg"  border="1" />
+<img src="./_readMe/xamppStart.jpg" />
 
-  3. MySqlの[Admin]ボタンをクリックすると、WEBブラウザでphpMyAdminのコンソールが開かれます。MySqlのアカウントとパスワードを設定していれば、それの入力を求めれられるので入力してログインして下さい。
+<img src="./_readMe/xamppStarted.jpg" />
 
-     <img src="./_readMe/phpMyAdminStart.jpg" border="1" />
 
-  4. 新規にデータベースを作成します。ここではデータベースの名前を「test」とします。
 
-     <img src="./_readMe/phpMyAdminCreateDB.jpg" border="1" />
+3. MySqlの[Admin]ボタンをクリックすると、WEBブラウザでphpMyAdminのコンソールが開かれます。MySqlのアカウントとパスワードを設定していれば、それの入力を求めれられるので入力してログインして下さい。
 
-  5. データベース「test」にテーブルを作成します。「yamori4webAuthn/sql(create_talbe) 配下にあるテキストファイルに記載されているSQLを、[SQL]タブのクエリ入力欄に入力して[実行]ボタンをクリックします。本アプリでは「user」テーブルと「web_authn」テーブルを作成する必要があります。
+<img src="./_readMe/phpMyAdminStart.jpg" />
 
-     <img src="./_readMe/createTable.jpg" width="700px" border="1" />
 
-     <img src="./_readMe/createdTable.jpg" width="700px" border="1" />
-  
-     
-  
+
+4. 新規にデータベースを作成します。ここではデータベースの名前を「test」とします。
+
+<img src="./_readMe/phpMyAdminCreateDB.jpg" />
+
+
+
+5. データベース「test」にテーブルを作成します。「yamori4webAuthn/sql(create_talbe) 」配下にあるテキストファイルに記載されているSQLを、[SQL]タブのクエリ入力欄に入力して[実行]ボタンをクリックします。本アプリでは「user」テーブルと「web_authn」テーブルを作成する必要があります。
+
+<img src="./_readMe/createTable.jpg" width="700px" />
+
+<img src="./_readMe/createdTable.jpg" width="700px" />
+
 
 
 * **アプリケーションの設定**
@@ -166,9 +183,15 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
 ## 使い方
 
-1. 一般的なWEBブラウザ(Chrome, FireFox, Edge,など)を用い、構築したウェブページ「 https://localhost/yamori4webAuthn/index.html 」を開きます。
+1. 設定直後の場合、念のためApacheとMySqlを再起動しておきます。
 
-2. まず認証器を登録します。適当なログインIDを入力し、”Register”ボタンをクリックします。
+   
+
+2. 一般的なWEBブラウザ(Chrome, Firefox, Edge,など)を用い、構築したウェブページ「 https://localhost/yamori4webAuthn/index.html 」を開きます。
+
+   
+
+3. まず認証器を登録します。適当なログインIDを入力し、”Register”ボタンをクリックします。
 
    <img src="./_readMe/use_inputLoginId.jpg"/>
 
@@ -176,25 +199,37 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
    <img src="./_readMe/authenticator.jpg" width=300/>
 
-3. WEBブラウザから本人確認のためのリクエストが要求されるので、認証器を用いて認証を実施してください。
+   
+
+4. WEBブラウザから本人確認のためのリクエストが要求されるので、認証器を用いて認証を実施してください。
 
    <img src="./_readMe/registerScreen.jpg"/>
 
-4. 認証に成功します。registrationSuccess
+   
+
+5. 認証に成功します。
 
    <img src="./_readMe/registrationSuccess.jpg"/>
 
-5. 続いてログイン処理に相当する認証を実施します。先ほど設定したログインIDを入力して、”Assertion”ボタンをクリックします。
+   
+
+6. 続いてログイン処理に相当する認証を実施します。先ほど設定したログインIDを入力して、”Assertion”ボタンをクリックします。
 
    <img src="./_readMe/use_assertion.jpg"/>
 
-6. WEBブラウザから本人確認のためのリクエストが要求されるので、認証器を用いて認証を実施してください。
+   
+
+7. WEBブラウザから本人確認のためのリクエストが要求されるので、認証器を用いて認証を実施してください。
 
    <img src="./_readMe/authnScreen.jpg"/>
 
-7. 認証に成功し、ログイン後の画面に遷移します。
+   
+
+8. 認証に成功し、ログイン後の画面に遷移します。
 
    <img src="./_readMe/authnSuccessScreen.jpg"/>
+
+   
 
    ※ここで"Logout"をクリックするとセッション情報を削除してログアウトし、認証画面に戻ります。
 
@@ -236,6 +271,7 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
   *see https://www.php.net/license/index.php*
   *This product includes PHP, freely available from https://www.php.net/*
 
+#### 謝辞
 
 本アプリを開発するにあたって上記のオープンソースを使用させていただきました。こられのプログラムの開発者様に心より感謝申し上げます。
 
