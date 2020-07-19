@@ -300,7 +300,7 @@ I would like to thank the developers of these programs sincerely.
 - This sample application does not completely implement the specifications of  WebAuthn. Specifically, I haven't implemented the FIDO Alliance Metadata Service (MDS) at all, and I don't fully understand the Trusted Platform Module (TPM). But I think this app is of sufficient quality for general use.
 - I'm using a ".htaccess" file in the source code, which is actually not good (".htaccess" is deprecated). However, in this sample app, I intentionally used ".htaccess" to minimize Apache settings.
 - The use of this application by anti-social forces and their parties is forbidden.
-- If you would like to use this app for enterprise, please contact [me](mailto: yamori4.113@gmail.com). Because I want to know what kind of service and how this app will be used.
+- If you would like to use this app for enterprise, please contact [me](<mailto: yamori4.113@gmail.com>). Because I want to know what kind of service and how this app will be used.
   
 
 ## Author
