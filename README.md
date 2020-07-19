@@ -1,84 +1,90 @@
 # yamori4webAuthn
 Web Authentication Sample Application For PHP.
 
-
-
-1. [概要](#概要)
-2. [デモサイト](#デモサイト)
-3. [画面キャプチャー](#画面キャプチャー)
-4. [動作環境構築手順](#動作環境構築手順)
-5. [使い方](#使い方)
-6. [使用させて頂いたオープンソース](#使用させて頂いたオープンソース)
-7. [ライセンス](#ライセンス)
-8. [注意事項](#注意事項)
-9. [作者](#作者)
+<img src="./_readMe/japaneseFlag.png" width="40"/>Click [here](https://github.com/yamori4/yamori4webAuthn/blob/master/README_japanese.md) for Japanese page. 
 
 
 
-## 概要
+1. [Summary](#Summary)
+2. [Demo Site](#Demo Site)
+3. [Screen Capture](#Screen Capture)
+4. [Installation](#Installation)
+5. [Usage](#Usage)
+6. [Relying On The Open Sources](#Relying On The Open Sources)
+7. [License](#License)
+8. [Notes](#Notes)
+9. [Author](#Author)
 
-FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w3.org/TR/webauthn/)）のサンプルアプリです。中小企業でそれなりに多く利用されているであろうLAMP環境での需要に応えようとPHPで開発しました。
-
-昨今、コロナ禍の影響もありリモートワークにおける認証機能の需要も上がってきてますので、その導入の手助けになればと思います。
 
 
+## Summary
 
-## デモサイト
+This application is a sample for the WebAuthn ([Web Authentication](https://www.w3.org/TR/webauthn/)), which is a component of the FIDO2.
+
+I developed this application to use WebAuthn in the LAMP (or XAMPP) environment.
+
+ I hope this app will help you deploy remote work, keeping in mind the recent corona virus pandemic.
+
+
+
+## Demo Site
 [https://endlesshard.work/yamori4webAuthn/index.html](https://endlesshard.work/yamori4webAuthn/index.html)
 
-<img src="./_readMe/demo.jpg" width="500"/> 
+<img src="./_readMe/demo.jpg" width="600"/> 
 
 
 
-## 画面キャプチャー
+## Screen Capture
 
-<img src="./_readMe/registerScreen.jpg" height="260px"/> <img src="./_readMe/authnScreen.jpg" height="260"/>
+ <img src="./_readMe/authnScreen.jpg" height="300"/>
 
  <img src="./_readMe/authnSuccessScreen.jpg" height="230px"/>
 
 
 
-## 動作環境構築手順
+## Installation
 
-* **動作に必要な環境/機器**
+* **Requirement**
 
-	* PHP動作環境
-	
-	  <small>※一部のメソッドがPHP7.4以上でないと動作しないめ、それ以上のバージョンの利用を推奨します。</small>
-	
-	* MySQL動作環境
-	
-	* 一般的なWEBブラウザ（Chrome, Firefox, Edge,など、IEはWebAuthn非対応）
-	
-	* FIDOの認証器、または、Windows Helloなど
-	
-	
+  * Runtime environment for PHP
 
-* **ミドルウェアの構築**
+    <small>* Some methods will not work unless you use PHP 7.4 or above, so it is recommended to use a version higher than that.</small>
 
-  [こちら](https://github.com/yamori4/objectOriented/blob/master/_readMe/installXampp.md)にXAMPPの構築手順をまとめていますので参考にしてください。
+  * Runtime environment for MySQL
 
-  また、本ドキュメントではXAMPP環境を前提としたものではありますが、当然LAMP環境でも動作します。
+  * Popular web browsers
+
+    <small>e.g.) Chrome, Firefox, Edge,  and so on, but IE does not support WbAuthn.</small>
+
+  * The Authenticator such as "FIDO key" or "Windows Hello".
 
   
 
-* <b>ソースコードのダウンロードと配置</b>
+* **Build middleware**
 
-  <small>※XAMPPのインストールが完了しており、「C:\xampp」にインストールされている前提です。</small>
+  Please refer to the XAMPP construction procedure summarized [here](https://github.com/yamori4/objectOriented/blob/master/_readMe/installXampp.md) (But only in Japanese language).
 
-1. [GitHubのページ](https://github.com/yamori4/yamori4webAuthn)から当アプリケーションのソースコードをダウンロードします。ここではzipファイルのダウンロードをしてみましょう。GitHubページの「Clone or download」から「Download ZIP」をクリックします。 ![alt](./_readMe/downloadZip.jpg)
+  By the way, this document assumes the XAMPP environment, but it also works in the LAMP environment.
 
-     
-
-2. ダウンロードしたzipファイルを解凍します。
-
-     
-
-3. 解凍したファイルは名前が「yamori4webAuthn-master」となっているので「yamori4webAuthn」に変更しておきましょう。
-
-     
   
-4. 「C:\xampp\htdocs」配下に解凍したファイルを配置します。以下のようなディレクトリ構成になっていればOKです。
+
+* <b>Download and deploy source code</b>
+
+  <small>* It is assumed that XAMPP has been installed and is installed in "C:\xampp".</small>
+
+1. Download the source code for this sample application from [GitHub](https://github.com/yamori4/yamori4webAuthn). In this example, download the zip file. Click "Download ZIP" from "Clone or download" on the GitHub page. ![alt](./_readMe/downloadZip.jpg)
+
+     
+
+2. Unzip the downloaded zip file.
+
+     
+
+3. The name of the unzipped file is "yamori4webAuthn-master", so change it to "yamori4webAuthn".
+
+     
+
+4. Place the unzipped file under "C:\xampp\htdocs". It is OK if the directory structure is as follows.
 
  ```
  C:
@@ -99,46 +105,45 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
        └─loginSuccess.php
  ```
 
-5. 構築自体は以上で完了なのですが、実際にウェブサービスとして稼働させて軽く動作確認をしてみましょう。「C:\xampp\xampp-control.exe」という実行ファイルをクリックしてXAMPPのControl Panelを起動します。
+5. Build is completed.  So let's run it as a web service and check a simple operation. Click "C:\xampp\xampp-control.exe" to start the XAMPP control panel.
 
    
 
-6. Apacheを起動します。Apacheの「Start」ボタンをクリックしてください。
+6. Start the Apache. Click "Start" button of the Apache.
 
 <img src="./_readMe/controlPanel.jpg" />
 
 
 
-7. 起動できました。
+7.  It has started.
 
 <img src="./_readMe/wakeupApache.jpg" />
 
 
 
 
-8. 任意のウェブブラウザを起動してください、ここではChromeを使用しています。アドレスバーに「 https://localhost/yamori4webAuthn/index.html 」と入力してみてください。以下の画面が表示されます。XAMPPできちんとした設定をすればエラーは出なくなりますが、今回は接続先が自分のPC(localhost)であることをしっかりと確認したうえで接続します。Chromeの場合だと「詳細設定」ボタンをクリックしてから、「localhostにアクセスする」をクリックしてください。
-（ちなみに、WebAuthnは"http"だと使用できません、"https"である必要があります。）
+8. Launch any web browser. In this example, using Chrome. Enter "https://localhost/yamori4webAuthn/index.html" in the address bar of your web browser. If you do not set the SSL certificate properly with XAMPP, a privacy error will be displayed on the browser, but This time, make sure that the connection destination is your PC (localhost) before connecting. If you use Chrome, click the "Advanced" button and then "Proceed to localhost (unsave)". By the way, the WebAuthn cannot be used with "http", it must be "https".
 
-<img src="./_readMe/privacyError.jpg" width="400"/> 
-
+<img src="./_readMe/privacyError.jpg" height="500px"/> 
 
 
-9. 以下の画面が表示されます。（※データベースの設定等をやっていないのでまだ動きません。）
+
+9. The following screen will be displayed.（The WebAuthn doesn't work yet because I haven't set up the database.）
 
 <img src="./_readMe/indexScreen.jpg" />
 
 
 
 
-* **データベースへのテーブル作成**
+* **Create table in database**
 
-  ※XAMPPのインストールが済んでいる前提です。
+  It is a prerequisite that XAMPP has been installed.
 
-1. XAMPPのコントロールパネルを起動します。
+1. Start the XAMPP control panel.
 
    
 
-2. ApacheとMySqlの[Start]ボタンをクリックして、ApacheとMySqlを立ち上げます。
+2. Start the Apache and the MySQL by clicking the "Start" button.
 
 <img src="./_readMe/xamppStart.jpg" />
 
@@ -146,19 +151,19 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
 
 
-3. MySqlの[Admin]ボタンをクリックすると、WEBブラウザでphpMyAdminのコンソールが開かれます。MySqlのアカウントとパスワードを設定していれば、それの入力を求めれられるので入力してログインして下さい。
+3. Click the "Admin" button of MySQL to open the phpMyAdmin console in your web browser. Enter the MySQL account ID and password in the console of phpMyAdmin and log in.
 
 <img src="./_readMe/phpMyAdminStart.jpg" />
 
 
 
-4. 新規にデータベースを作成します。ここではデータベースの名前を「test」とします。
+4. Create a new database. In this example, the database name is "test".
 
 <img src="./_readMe/phpMyAdminCreateDB.jpg" />
 
 
 
-5. データベース「test」にテーブルを作成します。「yamori4webAuthn/sql(create_talbe) 」配下にあるテキストファイルに記載されているSQLを、[SQL]タブのクエリ入力欄に入力して[実行]ボタンをクリックします。本アプリでは「user」テーブルと「web_authn」テーブルを作成する必要があります。
+5. Create a table in the database "test".Enter the SQL query of the file under "yamori4webAuthn/sql(create_talbe)" in the query input field of the [SQL] tab and click the [Go] button. In this app, you need to create a "user" table and a "web_authn" table.
 
 <img src="./_readMe/createTable.jpg" width="700px" />
 
@@ -166,98 +171,101 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
 
 
-* **アプリケーションの設定**
+* **Application settings**
 
-  * yamori4webAuthn/config/config.ini ファイルをテキストエディタで開き、必要に応じて各パラメータを変更します。
+  * Open the "yamori4webAuthn/config/config.ini" file with a text editor and change each parameter as needed.
 
-    * **test_mode** → true / false でテストモードのON/OFFを切り替える。テストモードだとデバッグ用のログがいっぱい出力されたり、 https://localhost/yamori4webAuthn/deleteDb.php にアクセスすることデータベースに登録されているユーザ情報とWebAuthnの鍵情報を削除できたりと、テスト用に若干挙動を変えている。
-    * **relying_party**  → WebAuthnを使用するサイトのドメイン名、ローカル環境ならば「localhost」で問題ない。実はwebAuthn認証利用時のパラメータに用いられる値。
-    * **relying_party**  → WebAuthnを使用するサイトのドメイン名、ローカル環境ならば「localhost」で問題ない。実はwebAuthn認証利用時のパラメータに用いられる値。
-    * **db_data_source_name** → データベースのデータソース名。
-    * **db_user_name** → データベースへのログインユーザ名。
-    * **db_password** →  データベースへのパスワード。
+    * **test_mode** → Set true/false to switch the test mode ON/OFF.  The behavior is slightly different in test mode. In test mode, output the log for debugging to the log file, and you can delete the user information and WebAuthn key information registered in the database by accessing "https://localhost/yamori4webAuthn/deleteDb.php".
+    * **relying_party**  → This is the domain name of the website that uses WebAuthn. If you use this app in your local environment, you can set "localhost". The value of this is used as a parameter for WebAuthn authentication.
+    * **db_data_source_name** → Database data source name
+    * **db_user_name** → Database login user name.
+    * **db_password** →  Database password.
+    
 
-    <img src="./_readMe/editConfig.jpg"/>
+<img src="./_readMe/editConfig.jpg"/>
 
 
 
-## 使い方
+## Usage
 
-1. 設定直後の場合、念のためApacheとMySqlを再起動しておきます。
-
-   
-
-2. 一般的なWEBブラウザ(Chrome, Firefox, Edge,など)を用い、構築したウェブページ「 https://localhost/yamori4webAuthn/index.html 」を開きます。
+1. In case of immediately after setting, restart the Apache and the MySQL for now.
 
    
 
-3. まず認証器を登録します。適当なログインIDを入力し、”Register”ボタンをクリックします。
+2. Open the built web page "https://localhost/yamori4webAuthn/index.html" using a popular web browser (Chrome, Firefox, Edge,  and so on).
+
+   
+
+3. Register the authenticator. Enter any login ID and click the "Register" button.
 
    <img src="./_readMe/use_inputLoginId.jpg"/>
 
-   <small>※ちなみに認証器は以下の画像のようにUSBに接続して使うタイプのものや、Windows Helloが相当します。またAndroidのバージョン 7.0（Nougat）以上だと元々ハードウェアに認証器が内蔵されてますので、スマートフォンで指紋認証とか顔認証が対応していれば、それと連動してFIDO2認証が使えるので生体認証が捗ります。また下記画像のUSBタイプのもののうち、いくつかはNFC機能に対応しているのでそれをスマートフォンで読み込ませたり、USB Type-Cで接続可能な認証器だと直接スマートフォンに接続して認証することもできます。（※iOS端末は現状(2020年5月時点)では状況がちょっと複雑みたいなので、お手数ですが各自で対応状況をご確認ください。）</small>
+   <small>Examples of authenticators include the types that are used by connecting to USB, such as the image below, and Windows Hello. If you use a smartphone that supports fingerprint, face authentication or other, you can use biometric authentication by linking them with FIDO2 authentication. Some of the authentication devices support NFC, and you can use them with the NFC communication function of your smartphone.
+   You can also use an authenticator that can be connected to USB Type-C by connecting it to the smartphone terminal. By the way, the situation is complicated at present on iOS devices (as of May 2020), so please check the support status yourself.</small>
 
    <img src="./_readMe/authenticator.jpg" width=300/>
 
    
 
-4. WEBブラウザから本人確認のためのリクエストが要求されるので、認証器を用いて認証を実施してください。
+4. A request for identity verification is requested from a web browser. In response to this request, you authenticate using an authenticator.
 
    <img src="./_readMe/registerScreen.jpg"/>
 
    
 
-5. 認証に成功します。
+5. Authentication for registration was successful.
 
    <img src="./_readMe/registrationSuccess.jpg"/>
 
    
 
-6. 続いてログイン処理に相当する認証を実施します。先ほど設定したログインIDを入力して、”Assertion”ボタンをクリックします。
+6. Next, authenticate your login. Enter the login ID you set up earlier and click the "Assertion" button.
 
    <img src="./_readMe/use_assertion.jpg"/>
 
    
 
-7. WEBブラウザから本人確認のためのリクエストが要求されるので、認証器を用いて認証を実施してください。
+7. A request for identity verification is requested from a web browser. In response to this request, you authenticate using an authenticator.
 
    <img src="./_readMe/authnScreen.jpg"/>
 
    
 
-8. 認証に成功し、ログイン後の画面に遷移します。
+8. Authentication was successful, and the web page transitions.
 
    <img src="./_readMe/authnSuccessScreen.jpg"/>
 
    
 
-   ※ここで"Logout"をクリックするとセッション情報を削除してログアウトし、認証画面に戻ります。
+   If you click "Logout", the session information will be deleted and you will be logged out to return to the authentication screen.
 
-   ※ちなみにログイン認証していない状態で、ログイン後の画面を表示した場合は以下のようになります。
+   If the screen after login is displayed without authentication, it will be as follows.
 
    <img src="./_readMe/notAuthenticated.jpg" height="200px"/>
 
 
 
-#### その他の機能について
+#### About other functions
 
-* **ログ出力**
+* **Logging**
 
-  yamori4webAuthn/config/ 配下にログファイルが出力されます。ログの出力先は yamori4webAuthn/util/log.php 内で定義していますので、そちらで変更可能です。
+  The log output destination is under "yamori4webAuthn/config/".
+
+  The log output destination is defined inside the "yamori4webAuthn/util/log.php" file. You can change the log output destination by changing the settings in this file.
 
   
 
-* **データベースに記録されているデータの削除**
+* **Delete data in database**
 
-  <small>※yamori4webAuthn/config/config.ini ファイルで、「test_mode = true」にしている場合のみ使用可能です。</small>
+  <small>This function can only be used if "test_mode = true" is set in the "yamori4webAuthn/config/config.ini file".</small>
 
-  WEBブラウザのアドレスバーに「 https://localhost/yamori4webAuthn/deleteDb.php 」と入力すると、データベースに記録されているユーザ情報とWebAuthnの鍵情報を削除できます。テスト時には便利ですが、<u>もし商用利用される場合はこの機能を削除したほうが良いと思います。</u>
+  You can delete the user information and WebAuthn key information recorded in the MySQL database by entering "https://localhost/yamori4webAuthn/deleteDb.php" in the address bar of the WEB browser while in the test mode. This feature is useful for testing, but if you use this app for commercial use <u>you had better remove this feature</u>.
 
   <img src="./_readMe/deleteDb.jpg" height="200px"/>
 
 
 
-## 使用させて頂いたオープンソース
+## Relying On The Open Sources
 
 * [WebAuthnDemo](https://github.com/google/webauthndemo/blob/master/src/main/webapp/js/webauthn.js)
   *&copy; 2017 Google Inc. All Rights Reserved.*
@@ -271,38 +279,48 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
   *see https://www.php.net/license/index.php*
   *This product includes PHP, freely available from https://www.php.net/*
 
-#### 謝辞
+#### Acknowledgment
 
-本アプリを開発するにあたって上記のオープンソースを使用させていただきました。こられのプログラムの開発者様に心より感謝申し上げます。
+I used the above open sources to develop this sample WebAuthn application.
+I would like to thank the developers of these programs sincerely.
 
 
 
-## ライセンス
+## License
 
 "yamori4webAuthn" is under [MIT license](https://opensource.org/licenses/mit-license.php).
 © 2020 Yamori4. All rights reserved.
 
 
 
-## 注意事項
+## Notes
 
-- [使用させて頂いたオープンソース](#使用させて頂いたオープンソース)は [MIT license](https://opensource.org/licenses/mit-license.php)ではないので、そちらについてもご考慮ください。一応、オープンソースを利用したものは yamori4webAuthn/oss 配下にまとめてあるので、そちらを別モジュールに置き換えていただくという方法もあります。
-- MITライセンス内にも記載されていますが、本アプリケーションの利用に起因もしくは関連して発生した損害に対して、作者は一切の責任を負いかねます。
-- 本サンプルアプリはWebAuthnの機能を完全に実装しているわけじゃないです。特に The FIDO Alliance Metadata Service (MDS) に関しては全くの未実装だし、Trusted Platform Module (TPM)についてもまだまだ理解が浅いです。ある程度使える品質だと自分では思っていますが、未実装の箇所や納得していない実装箇所が幾つか残っていて、テストも十分にはやってないです。
-- ソースコード内で .htaccess ファイルを使用していますが、これは一般的には非推奨です。今回はサンプルアプリということで、少々面倒なApache側の設定をせずに環境構築したいという意図があったため .htaccess を使用しました。
-- 反社会的勢力、および、その関係者のご利用はご遠慮いただきます。
-
+<<<<<<< HEAD
+- When you use this app, please keep in mind that [the open source](#Relying On The Open Sources) used in this app is not Released under [the MIT license](https://opensource.org/licenses/mit-license.php). The open sources used in this app are put together under "yamori4webAuthn/oss". So you can avoid the license restrictions if you replace their source code with another.
+- In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. This notice is also included in the MIT license.
+- This sample application does not completely implement the specifications of  WebAuthn. Specifically, I haven't implemented the FIDO Alliance Metadata Service (MDS) at all, and I don't fully understand the Trusted Platform Module (TPM). But I think this app is of sufficient quality for general use.
+- I'm using a ".htaccess" file in the source code, which is actually not good (".htaccess" is deprecated). However, in this sample app, I intentionally used ".htaccess" to minimize Apache settings.
+- The use of this application by anti-social forces and their parties is forbidden.
+- If you would like to use this app for enterprise, please contact [me](mailto: yamori4.113@gmail.com).
+  Because I want to know what kind of service and how this app will be used.
+=======
 - 商用利用する場合、[作者にまでご一報](<mailto: yamori4.113@gmail.com>)いただければ幸いです。どういった使われ方をするのかくらいは知っておきたいので。
+>>>>>>> origin/master
 
 
 
 
-## 作者
+## Author
 
 ​	**[yamori4](<mailto: yamori4.113@gmail.com>)**
 
-​	<small>WEB系の仕事をメインでやってたシステムエンジニア。セキュリティ・認証周りがほどほどに出来るおっさん。最近はWEB以外もぼちぼちやってる。</small>
+<small>I have been a software engineer for 10 years. I am japanese. I am not good at English. If my English is messed up, I am sorry.</small>
 
 
 
+Thank you!
+
+<<<<<<< HEAD
+=======
 以上
+>>>>>>> origin/master

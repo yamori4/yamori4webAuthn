@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP WebAuthn Sample<</title> </head> <body>
+    <title>WebAuthn Sample</title> </head> <body>
             <?php
             require_once dirname(__FILE__) . "/db/WebAuthnDao.php";
             require_once dirname(__FILE__) . "/db/userDao.php";

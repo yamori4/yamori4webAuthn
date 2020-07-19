@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /yamori4webAuthn
+RewriteRule ^attestation/options$ /yamori4webAuthn/attestation/options.php [L]
+RewriteRule ^attestation/result$ /yamori4webAuthn/attestation/result.php [L]
+RewriteRule ^assertion/options$ /yamori4webAuthn/assertion/options.php [L]
+RewriteRule ^assertion/result$ /yamori4webAuthn/assertion/result.php [L]
