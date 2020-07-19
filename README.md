@@ -6,11 +6,11 @@ Web Authentication Sample Application For PHP.
 
 
 1. [Summary](#Summary)
-2. [Demo Site](#Demo Site)
-3. [Screen Capture](#Screen Capture)
+2. [Demo Site](#Demo-Site)
+3. [Screen Capture](#Screen-Capture)
 4. [Installation](#Installation)
 5. [Usage](#Usage)
-6. [Relying On The Open Sources](#Relying On The Open Sources)
+6. [Relying On The Open Sources](#Relying-On-The-Open-Sources)
 7. [License](#License)
 8. [Notes](#Notes)
 9. [Author](#Author)
@@ -295,20 +295,13 @@ I would like to thank the developers of these programs sincerely.
 
 ## Notes
 
-<<<<<<< HEAD
 - When you use this app, please keep in mind that [the open source](#Relying On The Open Sources) used in this app is not Released under [the MIT license](https://opensource.org/licenses/mit-license.php). The open sources used in this app are put together under "yamori4webAuthn/oss". So you can avoid the license restrictions if you replace their source code with another.
 - In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software. This notice is also included in the MIT license.
 - This sample application does not completely implement the specifications of  WebAuthn. Specifically, I haven't implemented the FIDO Alliance Metadata Service (MDS) at all, and I don't fully understand the Trusted Platform Module (TPM). But I think this app is of sufficient quality for general use.
 - I'm using a ".htaccess" file in the source code, which is actually not good (".htaccess" is deprecated). However, in this sample app, I intentionally used ".htaccess" to minimize Apache settings.
 - The use of this application by anti-social forces and their parties is forbidden.
-- If you would like to use this app for enterprise, please contact [me](mailto: yamori4.113@gmail.com).
-  Because I want to know what kind of service and how this app will be used.
-=======
-- 商用利用する場合、[作者にまでご一報](<mailto: yamori4.113@gmail.com>)いただければ幸いです。どういった使われ方をするのかくらいは知っておきたいので。
->>>>>>> origin/master
-
-
-
+- If you would like to use this app for enterprise, please contact [me](mailto: yamori4.113@gmail.com). Because I want to know what kind of service and how this app will be used.
+  
 
 ## Author
 
@@ -319,8 +312,3 @@ I would like to thank the developers of these programs sincerely.
 
 
 Thank you!
-
-<<<<<<< HEAD
-=======
-以上
->>>>>>> origin/master
