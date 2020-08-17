@@ -163,7 +163,7 @@ I developed this application to use WebAuthn in the LAMP (or XAMPP) environment.
 
 
 
-5. Create a table in the database "test".Enter the SQL query of the file under "yamori4webAuthn/sql(create_talbe)" in the query input field of the [SQL] tab and click the [Go] button. In this app, you need to create a "user" table and a "web_authn" table.
+5. Create a table in the database "test".Enter the SQL query of the file under "yamori4webAuthn/sql(create_table)" in the query input field of the [SQL] tab and click the [Go] button. In this app, you need to create a "user" table and a "web_authn" table.
 
 <img src="./_readMe/createTable.jpg" width="700px" />
 
