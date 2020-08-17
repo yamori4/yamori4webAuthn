@@ -160,7 +160,7 @@ FIDO2を構成する要素であるWebAuthn（[Web Authentication](https://www.w
 
 
 
-5. データベース「test」にテーブルを作成します。「yamori4webAuthn/sql(create_talbe) 」配下にあるテキストファイルに記載されているSQLを、[SQL]タブのクエリ入力欄に入力して[実行]ボタンをクリックします。本アプリでは「user」テーブルと「web_authn」テーブルを作成する必要があります。
+5. データベース「test」にテーブルを作成します。「yamori4webAuthn/sql(create_table) 」配下にあるテキストファイルに記載されているSQLを、[SQL]タブのクエリ入力欄に入力して[実行]ボタンをクリックします。本アプリでは「user」テーブルと「web_authn」テーブルを作成する必要があります。
 
 <img src="./_readMe/createTable.jpg" width="700px" />
 
